@@ -1,0 +1,82 @@
+.periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(40px, 1fr));
+  grid-template-rows: repeat(10, minmax(45px, 1fr));
+  gap: 4px;
+  width: max-content; /* Allow grid to expand beyond container if needed */
+  min-width: 800px;  /* Ensure a minimum width so cells don't squish too much */
+  margin: 0 auto;
+  user-select: none;
+}
+
+.element-cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: var(--color-surface);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s;
+  overflow: hidden;
+}
+
+.element-cell:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.element-cell.selected {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.element-cell.dimmed {
+  opacity: 0.2;
+}
+
+.el-number {
+  font-size: 0.6rem;
+  align-self: flex-start;
+  color: #333;
+  opacity: 0.6;
+}
+
+.el-symbol {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-top: -2px;
+}
+
+.el-name {
+  font-size: 0.5rem;
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* Categories Colors */
+.cat-alkali { background-color: var(--cat-alkali); }
+.cat-alkaline-earth { background-color: var(--cat-alkaline-earth); }
+.cat-transition { background-color: var(--cat-transition); }
+.cat-post-transition { background-color: var(--cat-post-transition); }
+.cat-metalloid { background-color: var(--cat-metalloid); }
+.cat-nonmetal { background-color: var(--cat-nonmetal); }
+.cat-halogen { background-color: var(--cat-halogen); }
+.cat-noble { background-color: var(--cat-noble); }
+.cat-lanthanide { background-color: var(--cat-lanthanide); }
+.cat-actinide { background-color: var(--cat-actinide); }
+.cat-unknown { background-color: #e2e8f0; }
