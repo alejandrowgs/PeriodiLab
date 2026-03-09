@@ -62,65 +62,8 @@
   border-radius: 2px;
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  background-color: var(--color-surface);
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 0.4rem 1rem;
-  width: 300px;
-  transition: border-color 0.2s;
-}
-
-.search-bar:focus-within {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
-}
-
-.search-icon {
-  color: var(--color-text-muted);
-  margin-right: 0.5rem;
-}
-
-.search-bar input {
-  border: none;
-  outline: none;
-  background: transparent;
-  width: 100%;
-  font-size: 0.9rem;
-  color: var(--color-text-main);
-}
-
-.settings-btn {
-  background: none;
-  border: none;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: background-color 0.2s;
-}
-
-.settings-btn:hover {
-  background-color: #f1f5f9;
-  color: var(--color-text-main);
-}
-
 /* Responsive Styles */
 @media (max-width: 900px) {
-  .search-bar {
-    width: 200px;
-  }
   .nav-links {
     gap: 1rem;
   }
@@ -128,25 +71,29 @@
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 0 1rem;
-    overflow-x: auto; /* allow sliding the top nav if needed */
-    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 1rem;
+    height: auto; /* Allow navbar to grow in height if items wrap */
+    flex-wrap: wrap; /* Let elements break to the next line */
+    justify-content: center; /* Center everything when wrapped */
+    gap: 0.5rem;
   }
   
   .nav-brand {
     font-size: 1.2rem;
-  }
-  
-  .search-bar {
-    display: none; /* Hide search bar on mobile to save space */
+    width: 100%; /* Force brand to its own line */
+    justify-content: center;
+    margin-bottom: 0.2rem;
   }
   
   .nav-links {
-    gap: 0.8rem;
+    flex-wrap: wrap; /* Let links wrap into multiple lines if needed */
+    justify-content: center;
+    gap: 0.5rem 1rem;
   }
   
   .nav-link {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     white-space: nowrap;
+    padding: 0.2rem 0;
   }
 }
