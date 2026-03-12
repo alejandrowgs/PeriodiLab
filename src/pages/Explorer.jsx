@@ -37,14 +37,14 @@ const Explorer = () => {
               Todos
             </button>
             <button 
-              className={`filter-btn ${filterState === 'solid' ? 'active' : ''}`}
-              onClick={() => setFilterState('solid')}
+              className={`filter-btn ${filterState === 'sólido' ? 'active' : ''}`}
+              onClick={() => setFilterState('sólido')}
             >
               Sólidos
             </button>
             <button 
-              className={`filter-btn ${filterState === 'liquid' ? 'active' : ''}`}
-              onClick={() => setFilterState('liquid')}
+              className={`filter-btn ${filterState === 'líquido' ? 'active' : ''}`}
+              onClick={() => setFilterState('líquido')}
             >
               Líquidos
             </button>
