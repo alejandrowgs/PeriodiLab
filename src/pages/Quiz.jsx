@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import elementsData from '../data/PeriodicTableJSON.json';
+import { translateElement } from '../data/translations';
 import { Clock, CheckCircle2, ChevronRight, RotateCcw } from 'lucide-react';
 import './Quiz.css';
 
@@ -20,7 +21,8 @@ const difficulties = {
 };
 
 const Quiz = () => {
-  const elements = elementsData.elements || elementsData;
+  const rawElements = elementsData.elements || elementsData;
+  const elements = useMemo(() => rawElements.map(translateElement), []);
   const [difficulty, setDifficulty] = useState('medium');
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);

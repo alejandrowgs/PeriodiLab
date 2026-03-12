@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import elementsData from '../data/PeriodicTableJSON.json';
+import { translateElement } from '../data/translations';
 import { Target, Zap, Activity, Shield } from 'lucide-react';
 import './Trends.css';
 
@@ -63,7 +64,8 @@ const trendsMap = {
 };
 
 const Trends = () => {
-  const elements = elementsData.elements || elementsData;
+  const rawElements = elementsData.elements || elementsData;
+  const elements = useMemo(() => rawElements.map(translateElement), []);
   const [activeTrend, setActiveTrend] = useState('electronegativity');
   const trend = trendsMap[activeTrend];
 

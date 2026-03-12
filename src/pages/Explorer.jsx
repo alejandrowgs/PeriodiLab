@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PeriodicTable from '../components/PeriodicTable';
 import ElementCard from '../components/ElementCard';
 import elementsData from '../data/PeriodicTableJSON.json';
+import { translateElement } from '../data/translations';
 import './Explorer.css';
 
 const Explorer = () => {
@@ -10,9 +11,8 @@ const Explorer = () => {
   const [filterState, setFilterState] = useState('all');
 
   useEffect(() => {
-    // Some JSONs encapsulate the array in an object
     const data = elementsData.elements || elementsData;
-    setElements(data);
+    setElements(data.map(translateElement));
   }, []);
 
   const handleElementClick = (element) => {

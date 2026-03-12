@@ -2,6 +2,7 @@ import React from 'react';
 import './PeriodicTable.css';
 
 const categoryColorMap = {
+  // English (original JSON)
   'alkali metal': 'cat-alkali',
   'alkaline earth metal': 'cat-alkaline-earth',
   'transition metal': 'cat-transition',
@@ -13,6 +14,18 @@ const categoryColorMap = {
   'noble gas': 'cat-noble',
   'lanthanide': 'cat-lanthanide',
   'actinide': 'cat-actinide',
+  // Spanish (translated)
+  'metal alcalino': 'cat-alkali',
+  'metal alcalinotérreo': 'cat-alkaline-earth',
+  'metal de transición': 'cat-transition',
+  'metal de post-transición': 'cat-post-transition',
+  'metaloide': 'cat-metalloid',
+  'no metal diatómico': 'cat-nonmetal',
+  'no metal poliatómico': 'cat-nonmetal',
+  'halógeno': 'cat-halogen',
+  'gas noble': 'cat-noble',
+  'lantánido': 'cat-lanthanide',
+  'actínido': 'cat-actinide',
 };
 
 const getCategoryClass = (category) => {
