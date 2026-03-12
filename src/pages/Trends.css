@@ -1,7 +1,7 @@
 .trends-page {
   display: flex;
   gap: 2rem;
-  min-height: calc(100vh - var(--nav-height) - 4rem);
+  min-height: calc(100vh - 120px); 
 }
 
 .trends-sidebar {
@@ -228,7 +228,7 @@
   .trends-page {
     flex-direction: column;
     height: auto;
-    min-height: calc(100vh - var(--nav-height) - 4rem);
+    min-height: calc(100vh - 120px);
   }
 
   .trends-sidebar {

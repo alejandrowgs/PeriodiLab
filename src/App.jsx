@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div className="app-container">
         <Navbar />
-        <main className="main-content" style={{ marginTop: 'var(--nav-height)', padding: '2rem' }}>
+        <main className="main-content" style={{ padding: '2rem' }}>
           <Routes>
             <Route path="/explorer" element={<Explorer />} />
             <Route path="/trends" element={<Trends />} />
