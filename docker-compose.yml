@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  periodilab:
+    build: .
+    container_name: periodilab_app
+    restart: unless-stopped
+    ports:
+      - "8085:80" # El 8085 es el puerto de tu PC, el 80 es el del contenedor

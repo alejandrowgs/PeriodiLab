@@ -53,6 +53,17 @@ Para ejecutar este proyecto de forma local, sigue estos pasos:
 
 ---
 
+### 🐳 Despliegue con Docker (Homelab / Portainer)
+
+Este proyecto incluye la configuración necesaria para ser desplegado fácilmente en entornos propios (self-hosting) mediante contenedores.
+
+1. Asegúrate de tener Docker y Docker Compose instalados en tu servidor.
+2. En la raíz del proyecto, construye y levanta el contenedor en segundo plano:
+   ```bash
+   docker-compose up -d --build
+
+---
+
 ## 📱 Diseño Responsivo
 
 PeriodiLab ha sido optimizado para ser utilizado en múltiples dispositivos:
